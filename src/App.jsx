@@ -3,51 +3,53 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+function ExpenseForm() {
+  return (
+    <form action="">  
+      <label htmlFor="type-select">Type: 
+        <select name="expenseTypes" id="expenseTypes">
+          <option value="card">Card</option>
+          <option value="cash">Cash</option>
+          <option value="cryptocoin">Cryptocoin</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label htmlFor="description">Name:
+        <input type="text" id="description" name="description" placeholder="What did you spend on?"/>
+      </label>
+      <label htmlFor="date">Date: 
+        <input type="date" name="date" id="date" />
+      </label>
+      <label htmlFor="amount">Amount:
+        <input type="number" />
+      </label>
+      <input type="submit" value="Add a new expense" />
+    </form>
+    
+  )
+}
+
+export default function FilterableExpenseTable() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="filterableExpenseTable">
+        <h1>Simple Expense Manager</h1>
+        <h2>Add New Item</h2>
+        <div className="expenseForm">
+          <ExpenseForm />
+        </div> 
+        <div className="expenseTable"></div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+
     </>
   )
 }
 
 //Hierarchy of components
 //FilterableExpenseTable
-  //SearchFilters
-  //AddExpenseButton
+  //ExpenseForm
   //ExpenseTable
-    //ExpenseRow
 
-
-function FilterableExpenseTable() {
-  return (
-    <div>
-      <SearchFilters />
-      <AddExpenseButton />
-      <ExpenseTable />
-    </div>
-  )
-}
-
-export default App

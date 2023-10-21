@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+.expenseForm {
+  background-color: red;
+  height: 20px;
+  width: 100%;
+}
+
+.addExpenseButton {
+  background-color: skyblue;
+  height: 20px;
+  width: 100%;
+}
+.expenseTable {
+  background-color: purple;
+  height: 20px;
+  width: 100%;
+}
