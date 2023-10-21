@@ -29,6 +29,22 @@ function ExpenseForm() {
   )
 }
 
+function ExpenseTable() {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  )
+}
+
 export default function FilterableExpenseTable() {
   const [count, setCount] = useState(0)
 
@@ -40,7 +56,9 @@ export default function FilterableExpenseTable() {
         <div className="expenseForm">
           <ExpenseForm />
         </div> 
-        <div className="expenseTable"></div>
+        <div className="expenseTable">
+          <ExpenseTable />
+        </div>
       </div>
       
 
