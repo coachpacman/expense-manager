@@ -24,22 +24,20 @@ function ExpenseForm() {
     // </Form>
     <div class="container">
       <form action="">  
-        <div class="form-group row">
-          <label htmlFor="type-select" class="col-sm-3 col-form-label">Type: </label>
-          <div class="col-sm-9">
-            <select name="expenseTypes" id="expenseTypes" class="form-control"> 
+        <div class="row">
+          <div class="col form-group d-flex">
+            <label class="col-form-label w-25">Type: </label>
+            <select class="form-control w-75"> 
               <option value="card">Card</option>
               <option value="cash">Cash</option>
               <option value="cryptocoin">Cryptocoin</option>
               <option value="other">Other</option>
             </select>
           </div>
-        </div>
-        
-        <div class="form-group row">
-          <label htmlFor="description" class="col-sm-3 col-form-label">Name: </label>
-          <div class="col-sm-9">
-            <input type="text" id="description" name="description" placeholder="What did you spend on?" class="form-control"/>
+          
+          <div class="col form-group d-flex">
+            <label class="col-form-label w-25">Name: </label>
+            <input type="text" placeholder="What did you spend on?" class="form-control w-75"/>
           </div>
         </div>
         
