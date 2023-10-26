@@ -1,29 +1,16 @@
 import { useState } from 'react';
 import './App.css';
-// import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container'
-// import Col from 'react-bootstrap/Col';
 
 function ExpenseForm() {
+  
+  function addExpense() {
+    console.log("clicked!")
+  }
+  
   return (
-    // <Form>
-    //   <Form.Group className="mb-">
-    //     <Form.Label>Type:</Form.Label>
-    //     <Form.Select>
-    //       <option value="card">Card</option>
-    //       <option value="cash">Cash</option>
-    //       <option value="Cryptocoin">Cryptocoin</option>
-    //       <option value="Other">Other</option>
-    //     </Form.Select>
-    //   </Form.Group>
-    //   <Form.Group className='mb-3' controlId='formBasicEmail'>
-    //     <Form.Label>Email address</Form.Label>
-    //   </Form.Group>
-    // </Form>
+  
     <div class="container mt-5">
-      <form action="">  
+      <form name="expense-form" id="expense-form">  
         <div class="row">
           <div class="col form-group d-flex">
             <label class="col-form-label w-25">Type: </label>
@@ -57,7 +44,12 @@ function ExpenseForm() {
 
         <div class="row mt-4">
           <div class="col">
-            <button type="submit" class="btn btn-primary">Add a new expense</button> 
+            <input 
+              type="button" 
+              value="Add a new expense" 
+              class="btn btn-primary"
+              onClick={addExpense}
+              />
           </div>
         </div>
       </form>
@@ -69,7 +61,7 @@ function ExpenseForm() {
 function ExpenseTable() {
   return (
     <>
-      <table class="table mt-5">
+      <table class="table mt-5" id="table">
         <thead class="thead-dark">
           <tr>
             <th>Type</th>
@@ -96,16 +88,16 @@ export default function FilterableExpenseTable() {
 
   return (
     <>
-      <Container>
+      <div class="container">
         <h1>Simple Expense Manager</h1>
         <h2>Add New Item</h2>
-        <Row>
-          <ExpenseForm />
-        </Row>
-        <Row>
-          <ExpenseTable />
-        </Row>
-      </Container>
+        <div class="row">
+          <ExpenseForm />          
+        </div>
+        <div class="row">
+          <ExpenseTable />          
+        </div>
+      </div>
     </>
   )
 }
