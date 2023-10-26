@@ -69,8 +69,8 @@ function ExpenseForm() {
 function ExpenseTable() {
   return (
     <>
-      <table class="table">
-        <thead>
+      <table class="table mt-5">
+        <thead class="thead-dark">
           <tr>
             <th>Type</th>
             <th>Name</th>
@@ -80,10 +80,10 @@ function ExpenseTable() {
         </thead>
         <tbody>
           <tr>
-            <td>Cash</td>
-            <td>Car</td>
-            <td>October 23rd</td>
-            <td>$27,000</td>
+            <td class="small">Cash</td>
+            <td class="small">Car</td>
+            <td class="small">October 23rd</td>
+            <td class="small">$27,000</td>
           </tr>
         </tbody>
       </table>
