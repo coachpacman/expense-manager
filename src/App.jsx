@@ -22,7 +22,7 @@ function ExpenseForm() {
     //     <Form.Label>Email address</Form.Label>
     //   </Form.Group>
     // </Form>
-    <div class="container">
+    <div class="container mt-5">
       <form action="">  
         <div class="row">
           <div class="col form-group d-flex">
@@ -41,22 +41,22 @@ function ExpenseForm() {
           </div>
         </div>
         
-        <div class="form-group row">
-          <label htmlFor="date" class="col-sm-3 col-form-label">Date: </label>
-          <div class="col-sm-9">
-            <input type="date" name="date" id="date"  class="form-control"/>
+        <div class="row mt-4">
+          
+          <div class="col form-group d-flex">
+            <label class="col-form-label w-25">Date: </label>
+            <input type="date" name="date" id="date" class="form-control w-75"/>
           </div>
+
+          <div class="col form-group d-flex">
+            <label class="col-form-label w-25" htmlFor="amount">Amount: </label>
+            <input type="number"  class="form-control w-75"/>
+          </div>
+
         </div>
 
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" htmlFor="amount">Amount: </label>
-          <div class="col-sm-9">
-            <input type="number"  class="form-control"/>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-sm-9 offset-sm-3">
+        <div class="row mt-4">
+          <div class="col">
             <button type="submit" class="btn btn-primary">Add a new expense</button> 
           </div>
         </div>
