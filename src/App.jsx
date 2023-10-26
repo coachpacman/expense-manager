@@ -59,6 +59,30 @@ function ExpenseForm() {
 }
 
 function ExpenseTable() {
+  const expenses = [
+    {
+      id: 1,
+      type: "Cash",
+      description: "Car",
+      date: "October 23rd, 2013",
+      amount: 27
+    },
+    {
+      id: 2,
+      type: "Cash 2",
+      description: "Ball",
+      date: "October 24th, 2013",
+      amount: 30
+    },
+    {
+      id: 3,
+      type: "Cash 3",
+      description: "Foot",
+      date: "October 24th, 2014",
+      amount: 39
+    }
+  ]
+
   return (
     <>
       <table className="table mt-5" id="table">
@@ -71,12 +95,14 @@ function ExpenseTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="small">Cash</td>
-            <td className="small">Car</td>
-            <td className="small">October 23rd</td>
-            <td className="small">$27,000</td>
-          </tr>
+          {expenses.map(expense => (
+            <tr key={expense.id}>
+              <td>{expense.type}</td>
+              <td>{expense.description}</td>
+              <td>{expense.date}</td>
+              <td>{expense.amount}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
