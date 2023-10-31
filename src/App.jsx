@@ -9,7 +9,7 @@ export default function FilterableExpenseTable() {
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
   const [amount, setAmount] = useState('');
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState(localStorage.getItem('expenseData') ? JSON.parse(localStorage.getItem('expenseData')) : []);
 
   function handleSubmit(e) { //don't technically need this but e.preventDefault();
     //this is currently used on submit in the form, but don't think I need it
@@ -99,6 +99,19 @@ export default function FilterableExpenseTable() {
                         amount: amount
                       }
                     ])
+                    // const testArray = ["Obaseki", 25]
+                    localStorage.setItem('expenseData', JSON.stringify([
+                      ...expenses,
+                      {
+                        key: nextId++,
+                        type: type,
+                        description: description,
+                        date: date,
+                        amount: amount
+                      }
+                    ]));
+                    const testData = JSON.parse(localStorage.getItem('expenseData'));
+                    console.log(testData);
                   }}
                   >
                   Add a new expense 
