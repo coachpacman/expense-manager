@@ -15,12 +15,6 @@ export default function FilterableExpenseTable() {
     //this is currently used on submit in the form, but don't think I need it
     // Prevent the browser from reloading the page
     e.preventDefault();
-    //Read form data
-    const form = e.target;
-    const formData = new FormData(form);
-
-    const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson);
     
   }
 
@@ -122,29 +116,28 @@ export default function FilterableExpenseTable() {
                 <th>Name</th>
                 <th>Date</th>
                 <th>Amount</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {expenses.map(expense => (
-                <>
-                  <tr key={expense.id}>
-                    <td>{expense.type}</td>
-                    <td>{expense.description}</td>
-                    <td>{expense.date}</td>
-                    <td>{expense.amount}</td>
-                    <td>
-                      <button onClick={() => {
-                        setExpenses(
-                          expenses.filter(a =>
-                            a.id !== expense.id
-                            )
+                <tr key={expense.key}>
+                  <td>{expense.type}</td>
+                  <td>{expense.description}</td>
+                  <td>{expense.date}</td>
+                  <td>{expense.amount}</td>
+                  <td>
+                    <button className="btn btn-warning" onClick={() => {
+                      setExpenses(
+                        expenses.filter(a =>
+                          a.key !== expense.key
                           )
-                      }}>
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                </>
+                        )
+                    }}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
               ))}
             </tbody>
           </table>          
