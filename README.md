@@ -1,8 +1,21 @@
-# React + Vite
+# Expense Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is part of the [Software Development Mastermind program](https://andysterkowitz.com/). 
 
-Currently, two official plugins are available:
+### Learning goals
+Learn basics of React including:
+* Using state
+* Submitting a form
+* Rendering lists by treating arrays as immutable
+* Filtering lists
+* Basic bootstrap
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Requirements
+* User can add a new expense by pressing a button
+* Each expense added is displayed on the screen in a table
+* The expense table shows the following columns
+  * The date of expense
+  * A description of the expense
+  * The amount
+  * Where the purchases occurred (eg. McDonald’s)
+* [Deploy on Netlify](https://guileless-starship-4189ca.netlify.app/)
