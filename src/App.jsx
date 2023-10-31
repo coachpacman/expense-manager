@@ -21,7 +21,6 @@ export default function FilterableExpenseTable() {
 
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson);
-    console.log(formJson.type);
     
   }
 
@@ -99,7 +98,7 @@ export default function FilterableExpenseTable() {
                     setExpenses([
                       ...expenses,
                       {
-                        id: nextId++,
+                        key: nextId++,
                         type: type,
                         description: description,
                         date: date,
@@ -127,12 +126,25 @@ export default function FilterableExpenseTable() {
             </thead>
             <tbody>
               {expenses.map(expense => (
-                <tr key={expense.id}>
-                  <td>{expense.type}</td>
-                  <td>{expense.description}</td>
-                  <td>{expense.date}</td>
-                  <td>{expense.amount}</td>
-                </tr>
+                <>
+                  <tr key={expense.id}>
+                    <td>{expense.type}</td>
+                    <td>{expense.description}</td>
+                    <td>{expense.date}</td>
+                    <td>{expense.amount}</td>
+                    <td>
+                      <button onClick={() => {
+                        setExpenses(
+                          expenses.filter(a =>
+                            a.id !== expense.id
+                            )
+                          )
+                      }}>
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </>
               ))}
             </tbody>
           </table>          
