@@ -1,6 +1,6 @@
 # Expense Manager
 
-This project is part of the [Software Development Mastermind program](https://andysterkowitz.com/). 
+This project is part of the [Software Development Mastermind program](https://andysterkowitz.com/), a 4-month, online, project based learning program. 
 
 ### Learning goals
 Learn basics of React including:
