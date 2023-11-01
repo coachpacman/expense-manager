@@ -39,10 +39,12 @@ export default function FilterableExpenseTable() {
             <div className="col form-group d-flex">
               <label className="col-form-label w-25">Type: </label>
               <select 
+                value={type}
                 name="type" 
                 className="form-control w-75" 
                 onChange={e => setType(e.target.value)}
                 > 
+                <option value="">--select--</option>
                 <option value="card">Card</option>
                 <option value="cash">Cash</option>
                 <option value="cryptocoin">Cryptocoin</option>
@@ -68,6 +70,7 @@ export default function FilterableExpenseTable() {
             <div className="col form-group d-flex">
               <label className="col-form-label w-25">Date: </label>
               <input 
+                value={date}
                 type="date" 
                 name="date" 
                 id="date" 
@@ -79,6 +82,7 @@ export default function FilterableExpenseTable() {
             <div className="col form-group d-flex">
               <label className="col-form-label w-25" htmlFor="amount">Amount: </label>
               <input 
+                value={amount}
                 type="number"  
                 className="form-control w-75"
                 name="amount"
@@ -102,6 +106,11 @@ export default function FilterableExpenseTable() {
                     ...expenses,
                     expense
                   ]));
+
+                  setType("");
+                  setDescription("");
+                  setAmount("");
+                  setDate("");
                 }}
                 >
                 Add a new expense 
