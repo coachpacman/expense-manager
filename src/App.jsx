@@ -3,21 +3,6 @@ import './App.css';
 
 let nextId = 0;
 
-
-
-// function ClearStorage({expenseData}) {
-
-//   if (expenseData) {
-//     return <button 
-//       className='btn btn-secondary'
-//       onClick={() => {
-//         localStorage.clear();
-//         setExpenses([]);
-//       }}
-//       >clear storage</button>
-//   }
-// }
-
 export default function FilterableExpenseTable() {
   const [type, setType] = useState('');
   const [description, setDescription] = useState('');
