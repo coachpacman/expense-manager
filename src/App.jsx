@@ -140,15 +140,23 @@ export default function FilterableExpenseTable() {
                 <td>{expense.amount}</td>
                 <td>
                   <button className="btn btn-warning" onClick={() => {
-                    const nextExpenses = expenses.map(a => {
-                      if (a.key === expense.key) {
-                        console.log("key matches")
-                      } else {
-                        console.log("key doesn't match")
+                    
+                    for (let i = 0; i < expenses.length; i++) {
+                      if (expenses[i].key === expense.key) {
+                        const nextExpenses = expenses.splice(i, 1);
+                        setExpenses(nextExpenses);
+                        localStorage.setItem('expenseData', JSON.stringify(expenses));
                       }
-                    })
+                    }
+                    // const nextExpenses = expenses.map(a => {
+                    //   if (a.key === expense.key) {
+                    //     console.log("key matches")
+                    //   } else {
+                    //     console.log("key doesn't match")
+                    //   }
+                    // })
                     // setExpenses(nextExpenses)
-                    console.log(nextExpenses);
+                   
                     // localStorage.setItem('expenseData',JSON.stringify(expenses));
                     // console.log("clicked")
                     // console.log(expenses)
